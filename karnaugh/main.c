@@ -63,6 +63,15 @@ int showMap(int **matrix, int i_dim, int j_dim)
     }
 }
 
+// Template fungsi tulis ke file, nanti diubah sesuai kebutuhan		   
+int output(i){
+    FILE *f = fopen("C:/Users/HP/Documents/target.txt","w");
+    printf("Test : ");
+
+    fprintf(f,"%d",i);
+    fclose(f);
+}
+		   
 int main()
 {
     printf("Tugas Besar Pemecahan Masalah dengan C: Kelompok \nAnggota 1 \t18320\nAnggota 1 \t18320\nAnggota 1 \t18320\n\n");
