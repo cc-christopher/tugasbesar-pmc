@@ -1,88 +1,51 @@
+
+
 #include <stdio.h>
 #include <stdlib.h>
+#include "local.h"
 
-#define MAX_STR 255
-
-int inputFile(int *i_dim, int *j_dim)
-{
-    char file_name[MAX_STR];
-    char line[MAX_STR];
-    char temp[MAX_STR];
-
-    char *token;
-
-    int count = 0;
-
-    // nama file pada current directory
-    printf("Masukkan file truth table yang hendak dianalisis: ")
-    scanf("%d", file_name);
-
-    //buka file - validasi
-    FILE *file_kar = fopen(file_name, "r");
-    if(file_kar == NULL) {
-        printf("File tidak ditemukan. Mohon restart program...\n");
-        fclose(file_kar);
-        exit(1);
-    }
-
-    printf("File ditemukan. Mulai mencetak tabel kebenaran...");
-    fgets(line, MAX_STR, file_kar);
-    int **truthtable = (int **) malloc (())
-
-    while(fgets(line, MAX_STR, file_kar)) {
-        strcpy(temp,each_line);
-        int curr_ix = 0, curr_col = 0;
-        token = strtok(temp,",");
-        while(token!=NULL) {
-            value = atoi(token);
-            truthtable[curr_ix][curr_col] = value;
-            column++;
-            token = strtok(NULL, ",");
-        }
-    }
-    return truthtable;
-}
-
-int choose (int * choice)
-{
-    printf("Tentukan jenis Karnaugh Map yang digunakan:\n1. Standard K-Map\n2. Don't Cares\n");
-    printf("Tuliskan nomor pilihan: ");
-    scanf("%d", choice);
-    printf("\n");
-}
-
-int showMap(int **matrix, int i_dim, int j_dim)
-{
-    for (int i=65; i<i_dim; i++) {
-
-    }
-    for (int i=0; i<i_dim; i++) {
-        for (int j=0; j<j_dim; j++) {
-            printf("%d", matrix[i][j]");
-        }
-    }
-}
-
-// Template fungsi tulis ke file, nanti diubah sesuai kebutuhan		   
-int output(i){
-    FILE *f = fopen("C:/Users/HP/Documents/target.txt","w");
-    printf("Test : ");
-
-    fprintf(f,"%d",i);
-    fclose(f);
-}
-		   
 int main()
 {
-    printf("Tugas Besar Pemecahan Masalah dengan C: Kelompok \nAnggota 1 \t18320\nAnggota 1 \t18320\nAnggota 1 \t18320\n\n");
+    Stack *oristack = (Stack *) malloc (sizeof(Stack));
+    oristack->head = NULL;
 
-	int i_mat, j_mat, choice;
-	char** truthtable;
-	charr**
+    // ganti jika sudah ada tambahan
+    Node *newNode1 = (Node *) malloc (sizeof(Node));
+    Node *newNode2 = (Node *) malloc (sizeof(Node));
+    Node *newNode3 = (Node *) malloc (sizeof(Node));
+    Node *newNode4 = (Node *) malloc (sizeof(Node));
 
-    truthtable = inputFile(&i_mat, &j_mat);     //baca file tabel, kemudian buat sebagai matriks
-    showMap(truthtable, i_mat, j_mat);          //tampilkan tabel dari file
-    choose(&choice);                            //pilih aturan Karnaugh
-    kar = process(truthtable, i_mat, j_mat);    //buat K-Map
-    showMap(kar, i_mat, j_mat);                 //tampilkan tabel hasil proses
+    strcpy(newNode1->data, "0000");
+    newNode1->next = oristack->head;
+    newNode1->yes = 0;
+    oristack->head = newNode1;
+
+    strcpy(newNode2->data, "0100");
+    newNode2->next = oristack->head;
+    newNode2->yes = 0;
+    oristack->head = newNode2;
+
+    strcpy(newNode3->data, "0010");
+    newNode3->next = oristack->head;
+    newNode3->yes = 0;
+    oristack->head = newNode3;
+
+    strcpy(newNode4->data, "1111");
+    newNode4->next = oristack->head;
+    newNode4->yes = 0;
+    oristack->head = newNode4;
+
+    Stack *newstack = (Stack *) malloc (sizeof(Stack));
+    newstack->head = NULL;
+
+    if (oristack->head->next == NULL) {
+        printf("Bruh");
+    }
+    operate(oristack,          // adjacent matrix
+            newstack
+            );
+                    // -> *Stack path_list
+
+
+    writeSource(newstack);
 }
