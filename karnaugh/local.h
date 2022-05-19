@@ -19,16 +19,22 @@ typedef struct Stack {
     Node* head;                     // alamat tumpukan teratas
 } Stack;
 
+// baca file dan susun stack
+void readFile(
+             Stack *astack,
+             int *len);
+
 // fungsi rekursif
 int operate(
-            Stack *path_list,           // tumpukan string path
-            Stack *banned_list);        // tumpukan string hasil
+            Stack *orione,           // tumpukan string path
+            Stack *newone,         // tumpukan string hasil
+            int n);                         // jumlah variabel
 
 
 // debugging
-void writeSource(
-                 Stack *refstack        // stack path_list
-                 );
+void writeResult(
+                 Stack *refstack,        // stack path_list
+                 int n);
 
 
 
