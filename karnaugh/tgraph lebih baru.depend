@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1652999957 source:d:\modul-9-kelompok-a1\tgraph lebih baru\local.c
+	"local.h"
+
+1652997138 d:\modul-9-kelompok-a1\tgraph lebih baru\local.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1652998992 source:d:\modul-9-kelompok-a1\tgraph lebih baru\main.c
+	<stdio.h>
+	<stdlib.h>
+	"local.h"
+
